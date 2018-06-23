@@ -14,6 +14,8 @@
     <title>Event UnAcademy - Doing is Learning</title>
 </head>
 <body>
-    
+    <header class="header">
+        Some Text...
+    </header>
 </body>
 </html>
