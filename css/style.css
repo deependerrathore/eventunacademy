@@ -20,8 +20,8 @@ body{
     height: 95vh;
     background-image:linear-gradient(
         to right bottom,
-        #F0433AD0,
-        #8C1C2BD0),
+        #734052D0,
+        #F4EAC8D0),
         url(../images/hero.jpeg); /*which ever we define first will come on top - so in this case first comes the gradient then image*/
     background-size: cover; /*always try to fit in the view port*/
     background-position: top; /*top portion will remain fix -- bottom ,center are other property that we can use generally*/
@@ -37,4 +37,31 @@ body{
 
 .logo{
     height: 50px; /* width will be automatically figure it out by browser*/
+}
+
+.text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%); /* because of the top and left 50% property the positon will be not what we wanted i.e. the text will be slighltly right and below so using this propery so that we can center the content*/
+    text-align: center;
+}
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+    
+}
+
+.heading-primary-main{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 48px;
+}
+
+.heading-primary-secondary{
+    display: block;    
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 8px;
 }
