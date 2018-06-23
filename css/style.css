@@ -56,7 +56,20 @@ body{
     display: block;
     font-size: 60px;
     font-weight: 400;
-    letter-spacing: 48px;
+    letter-spacing: 35px;
+    
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; 
+    /*
+    animation-delay: 3s; this is used for delay
+    animation-iteration-count: 3;
+  
+    animation-timing-function: ease-out;  faster then flow
+    animation-timing-function: ease-in;  slow then fast
+    
+    */
+
 }
 
 .heading-primary-secondary{
@@ -64,4 +77,42 @@ body{
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 8px;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+}
+
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80%{
+        transform: translateX(10px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+
+    }
+}
+
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80%{
+        transform: translateX(-10px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+
+    }
 }
