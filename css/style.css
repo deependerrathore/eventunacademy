@@ -13,11 +13,16 @@ body{
     font-display: 16px;
     line-height: 1.7;
     color: #777777;
+    padding: 30px;
 }
 
 .header{
     height: 95vh;
-    background-image: url(../images/hero.jpeg);
+    background-image:linear-gradient(
+        to right bottom,
+        #F2DCC2D0,
+        #8C8C8CD0),
+        url(../images/hero.jpeg); /*which ever we define first will come on top - so in this case first comes the gradient then image*/
     background-size: cover; /*always try to fit in the view port*/
-
+    background-position: top; /*top portion will remain fix -- bottom ,center are other property that we can use generally*/
 }
