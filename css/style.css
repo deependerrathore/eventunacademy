@@ -14,3 +14,10 @@ body{
     line-height: 1.7;
     color: #777777;
 }
+
+.header{
+    height: 95vh;
+    background-image: url(../images/hero.jpeg);
+    background-size: cover; /*always try to fit in the view port*/
+
+}
