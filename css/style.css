@@ -116,6 +116,21 @@ body{
     }
 }
 
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+
+    }
+}
+
 .btn:link,
 .btn:visited {
     text-transform: uppercase;
@@ -123,6 +138,10 @@ body{
     display: inline-block; /*respect height and width - if we use block instead it will take full width of parent element*/
     border-radius: 100px;/*we can give any high number*/
     transition: all .2s; /*transition is always defines in parent element*/  
+
+    position: relative; /*putting because of pseudo elements absolute positioning*/
+
+    
 }
 
 .btn:hover{
@@ -138,4 +157,33 @@ body{
     background-color: #fff;
     color: #777777;
     padding: 15px 40px;
+}
+
+.btn::after{
+    content: ""; /*mandetory to define this*/
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    transition: all .4s;
+}
+
+.btn-white::after{
+    background-color: #fff;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+
+.btn-animated{
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards; /*automatically applies the behaviour of 0% i.e @keyframes 0% opacity 0*/
 }
