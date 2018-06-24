@@ -20,7 +20,7 @@ body{
     height: 95vh;
     background-image:linear-gradient(
         to right bottom,
-        #734052D0,
+        #000D,
         #F4EAC8D0),
         url(../images/hero.jpeg); /*which ever we define first will come on top - so in this case first comes the gradient then image*/
     background-size: cover; /*always try to fit in the view port*/
@@ -74,9 +74,9 @@ body{
 
 .heading-primary-secondary{
     display: block;    
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 700;
-    letter-spacing: 8px;
+    letter-spacing: 15px;
 
     animation: moveInRight 1s ease-out;
 }
