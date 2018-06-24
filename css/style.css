@@ -49,7 +49,9 @@ body{
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
-    
+    backface-visibility: hidden; /*to remove the shaky animation - not happening on my PC - in actual text move bit upwards 1 or 2px*/
+
+    margin-bottom: 60px;
 }
 
 .heading-primary-main{
@@ -58,9 +60,7 @@ body{
     font-weight: 400;
     letter-spacing: 35px;
     
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out; 
+    animation: moveInLeft 1s ease-out;
     /*
     animation-delay: 3s; this is used for delay
     animation-iteration-count: 3;
@@ -78,8 +78,7 @@ body{
     font-weight: 700;
     letter-spacing: 8px;
 
-    animation-name: moveInRight;
-    animation-duration: 1s;
+    animation: moveInRight 1s ease-out;
 }
 
 @keyframes moveInLeft{
@@ -115,4 +114,26 @@ body{
         transform: translate(0);
 
     }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block; /*respect height and width - if we use block instead it will take full width of parent element*/
+    border-radius: 100px;/*we can give any high number*/
+
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+}
+
+.btn:active{
+    transform: translateY(1px);
+}
+.btn-white{
+    background-color: #fff;
+    color: #777777;
+    padding: 15px 40px;
 }
