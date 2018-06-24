@@ -122,15 +122,17 @@ body{
     text-decoration: none;
     display: inline-block; /*respect height and width - if we use block instead it will take full width of parent element*/
     border-radius: 100px;/*we can give any high number*/
-
+    transition: all .2s; /*transition is always defines in parent element*/  
 }
 
 .btn:hover{
     transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2); /*x offset = 0 y offset = 10px blur 20px*/
 }
 
 .btn:active{
     transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 }
 .btn-white{
     background-color: #fff;
