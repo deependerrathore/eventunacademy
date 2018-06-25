@@ -1,0 +1,14 @@
+{
+  "name": "eventunacademy",
+  "version": "1.0.0",
+  "description": "EVENT UNACADEMY | OUR GOOL IS TO INSPIRE LEARNING BY DOING",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "deepender",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  }
+}
