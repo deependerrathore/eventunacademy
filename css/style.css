@@ -2,188 +2,155 @@
 Normalize e.g. In H1 tag their is always margin and padding is attached to it by default
 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /*border and padding is not added to total width and total height*/
-    
-}
-body{
-    font-family: 'Lato', sans-serif;
-    font-weight:400;
-    font-display: 16px;
-    line-height: 1.7;
-    color: #777777;
-    padding: 30px;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*border and padding is not added to total width and total height*/ }
 
-.header{
-    height: 95vh;
-    background-image:linear-gradient(
-        to right bottom,
-        #000D,
-        #F4EAC8D0),
-        url(../images/hero.jpeg); /*which ever we define first will come on top - so in this case first comes the gradient then image*/
-    background-size: cover; /*always try to fit in the view port*/
-    background-position: top; /*top portion will remain fix -- bottom ,center are other property that we can use generally*/
-    clip-path: polygon(0 0, 100% 0 , 100% 75vh, 0 100%); /*can use bennettfeely.com/clippy for other clip polygon*/
-    position: relative; /*we have to give relative position to header because .logo-box is absolute position and it need a relation from where to calculate positon*/
-}
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-display: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px; }
 
-.logo-box{
-    position: absolute;
-    top: 40px; /* this 40px will calculated from .header as the postion is relative and .logo-box psition is absolute*/
-    left: 40px;
-}
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(40, 180, 133, 0.8), rgba(126, 213, 111, 0.8)), url(../images/hero.jpeg);
+  /*which ever we define first will come on top - so in this case first comes the gradient then image*/
+  background-size: cover;
+  /*always try to fit in the view port*/
+  background-position: top;
+  /*top portion will remain fix -- bottom ,center are other property that we can use generally*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /*can use bennettfeely.com/clippy for other clip polygon*/
+  position: relative;
+  /*we have to give relative position to header because .logo-box is absolute position and it need a relation from where to calculate positon*/ }
 
-.logo{
-    height: 50px; /* width will be automatically figure it out by browser*/
-}
+.logo-box {
+  position: absolute;
+  top: 40px;
+  /* this 40px will calculated from .header as the postion is relative and .logo-box psition is absolute*/
+  left: 40px; }
 
-.text-box{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%); /* because of the top and left 50% property the positon will be not what we wanted i.e. the text will be slighltly right and below so using this propery so that we can center the content*/
-    text-align: center;
-}
-.heading-primary{
-    color: #fff;
-    text-transform: uppercase;
-    backface-visibility: hidden; /*to remove the shaky animation - not happening on my PC - in actual text move bit upwards 1 or 2px*/
+.logo {
+  height: 50px;
+  /* width will be automatically figure it out by browser*/ }
 
-    margin-bottom: 60px;
-}
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* because of the top and left 50% property the positon will be not what we wanted i.e. the text will be slighltly right and below so using this propery so that we can center the content*/
+  text-align: center; }
 
-.heading-primary-main{
-    display: block;
-    font-size: 60px;
-    font-weight: 400;
-    letter-spacing: 35px;
-    
-    animation: moveInLeft 1s ease-out;
-    /*
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /*to remove the shaky animation - not happening on my PC - in actual text move bit upwards 1 or 2px*/
+  margin-bottom: 60px; }
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation: moveInLeft 1s ease-out;
+  /*
     animation-delay: 3s; this is used for delay
     animation-iteration-count: 3;
   
     animation-timing-function: ease-out;  faster then flow
     animation-timing-function: ease-in;  slow then fast
     
-    */
+    */ }
 
-}
+.heading-primary-secondary {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 15px;
+  animation: moveInRight 1s ease-out; }
 
-.heading-primary-secondary{
-    display: block;    
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 15px;
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  80% {
+    transform: translateX(10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
-    animation: moveInRight 1s ease-out;
-}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  80% {
+    transform: translateX(-10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
-@keyframes moveInLeft{
-    0%{
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    80%{
-        transform: translateX(10px);
-    }
-
-    100%{
-        opacity: 1;
-        transform: translate(0);
-
-    }
-}
-
-
-@keyframes moveInRight{
-    0%{
-        opacity: 0;
-        transform: translateX(100px);
-    }
-
-    80%{
-        transform: translateX(-10px);
-    }
-
-    100%{
-        opacity: 1;
-        transform: translate(0);
-
-    }
-}
-
-
-@keyframes moveInBottom{
-    0%{
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-
-    100%{
-        opacity: 1;
-        transform: translate(0);
-
-    }
-}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 .btn:link,
 .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block; /*respect height and width - if we use block instead it will take full width of parent element*/
-    border-radius: 100px;/*we can give any high number*/
-    transition: all .2s; /*transition is always defines in parent element*/  
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  /*respect height and width - if we use block instead it will take full width of parent element*/
+  border-radius: 100px;
+  /*we can give any high number*/
+  transition: all .2s;
+  /*transition is always defines in parent element*/
+  position: relative;
+  /*putting because of pseudo elements absolute positioning*/ }
 
-    position: relative; /*putting because of pseudo elements absolute positioning*/
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  /*x offset = 0 y offset = 10px blur 20px*/ }
 
-    
-}
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
 
-.btn:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .2); /*x offset = 0 y offset = 10px blur 20px*/
-}
+.btn-white {
+  background-color: #fff;
+  color: #777;
+  padding: 15px 40px; }
 
-.btn:active{
-    transform: translateY(1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-}
-.btn-white{
-    background-color: #fff;
-    color: #777777;
-    padding: 15px 40px;
-}
+.btn::after {
+  content: "";
+  /*mandetory to define this*/
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
 
-.btn::after{
-    content: ""; /*mandetory to define this*/
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+.btn-white::after {
+  background-color: #fff; }
 
-    transition: all .4s;
-}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0; }
 
-.btn-white::after{
-    background-color: #fff;
-}
-
-.btn:hover::after{
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-
-.btn-animated{
-    animation: moveInBottom .5s ease-out .75s;
-    animation-fill-mode: backwards; /*automatically applies the behaviour of 0% i.e @keyframes 0% opacity 0*/
-}
+.btn-animated {
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards;
+  /*automatically applies the behaviour of 0% i.e @keyframes 0% opacity 0*/ }
