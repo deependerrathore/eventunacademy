@@ -4,23 +4,32 @@ $color-primary-dark: #28b485;
 
 $color-dark-grey:#777;
 $color-white: #fff;
+$color-black: #000;
 /*
 Normalize e.g. In H1 tag their is always margin and padding is attached to it by default
 */
 
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /*border and padding is not added to total width and total height*/
+    box-sizing: inherit; /*border and padding is not added to total width and total height*/
     
+}
+html{
+    font-size: 62.5%; /*1rm = 10px we are using rem instead of em becoz em use parent font size where as rem uses root font size*/
+    /*100% is equivalent to 16px so if we are using 10px that means 100/16 * 10*/
 }
 body{
     font-family: 'Lato', sans-serif;
     font-weight:400;
-    font-display: 16px;
+    //font-size: 16px;
     line-height: 1.7;
     color: $color-dark-grey;
-    padding: 30px;
+    padding: 3rem;
+
+    box-sizing: border-box; //better practice
 }
 
 .header{
@@ -38,12 +47,12 @@ body{
 
 .logo-box{
     position: absolute;
-    top: 40px; /* this 40px will calculated from .header as the postion is relative and .logo-box psition is absolute*/
-    left: 40px;
+    top: 4rem; /* this 40px will calculated from .header as the postion is relative and .logo-box psition is absolute*/
+    left: 4rem;
 }
 
 .logo{
-    height: 50px; /* width will be automatically figure it out by browser*/
+    height: 5rem; /* width will be automatically figure it out by browser*/
 }
 
 .text-box{
@@ -58,14 +67,14 @@ body{
     text-transform: uppercase;
     backface-visibility: hidden; /*to remove the shaky animation - not happening on my PC - in actual text move bit upwards 1 or 2px*/
 
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 
 .heading-primary-main{
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     
     animation: moveInLeft 1s ease-out;
     /*
@@ -81,9 +90,9 @@ body{
 
 .heading-primary-secondary{
     display: block;    
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 15px;
+    letter-spacing: 1.5rem;
 
     animation: moveInRight 1s ease-out;
 }
@@ -91,11 +100,11 @@ body{
 @keyframes moveInLeft{
     0%{
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
 
     80%{
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
 
     100%{
@@ -109,11 +118,11 @@ body{
 @keyframes moveInRight{
     0%{
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
 
     80%{
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
 
     100%{
@@ -127,7 +136,7 @@ body{
 @keyframes moveInBottom{
     0%{
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(3rem);
     }
 
 
@@ -143,27 +152,29 @@ body{
     text-transform: uppercase;
     text-decoration: none;
     display: inline-block; /*respect height and width - if we use block instead it will take full width of parent element*/
-    border-radius: 100px;/*we can give any high number*/
+    border-radius: 10rem;/*we can give any high number*/
     transition: all .2s; /*transition is always defines in parent element*/  
 
     position: relative; /*putting because of pseudo elements absolute positioning*/
+
+    font-size: 1.6rem;   
 
     
 }
 
 .btn:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .2); /*x offset = 0 y offset = 10px blur 20px*/
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, .2); /*x offset = 0 y offset = 10px blur 20px*/
 }
 
 .btn:active{
     transform: translateY(1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba($color-black, .2);
 }
 .btn-white{
     background-color: $color-white;
     color: $color-dark-grey;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
 }
 
 .btn::after{
@@ -171,7 +182,7 @@ body{
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
