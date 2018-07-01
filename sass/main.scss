@@ -43,59 +43,63 @@ body{
     background-position: top; /*top portion will remain fix -- bottom ,center are other property that we can use generally*/
     clip-path: polygon(0 0, 100% 0 , 100% 75vh, 0 100%); /*can use bennettfeely.com/clippy for other clip polygon*/
     position: relative; /*we have to give relative position to header because .logo-box is absolute position and it need a relation from where to calculate positon*/
+
+    &__logo-box{
+        position: absolute;
+        top: 4rem; /* this 40px will calculated from .header as the postion is relative and .logo-box psition is absolute*/
+        left: 4rem;
+    }
+    
+    &__logo{
+        height: 5rem; /* width will be automatically figure it out by browser*/
+    }
+    
+    &__text-box{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%); /* because of the top and left 50% property the positon will be not what we wanted i.e. the text will be slighltly right and below so using this propery so that we can center the content*/
+        text-align: center;
+    }
 }
 
-.header__logo-box{
-    position: absolute;
-    top: 4rem; /* this 40px will calculated from .header as the postion is relative and .logo-box psition is absolute*/
-    left: 4rem;
-}
 
-.header__logo{
-    height: 5rem; /* width will be automatically figure it out by browser*/
-}
-
-.header__text-box{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%); /* because of the top and left 50% property the positon will be not what we wanted i.e. the text will be slighltly right and below so using this propery so that we can center the content*/
-    text-align: center;
-}
 .heading-primary{
     color: $color-white;
     text-transform: uppercase;
     backface-visibility: hidden; /*to remove the shaky animation - not happening on my PC - in actual text move bit upwards 1 or 2px*/
 
     margin-bottom: 6rem;
-}
 
-.heading-primary--main{
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
+    &--main{
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        
+        animation: moveInLeft 1s ease-out;
+        /*
+        animation-delay: 3s; this is used for delay
+        animation-iteration-count: 3;
+      
+        animation-timing-function: ease-out;  faster then flow
+        animation-timing-function: ease-in;  slow then fast
+        
+        */
     
-    animation: moveInLeft 1s ease-out;
-    /*
-    animation-delay: 3s; this is used for delay
-    animation-iteration-count: 3;
-  
-    animation-timing-function: ease-out;  faster then flow
-    animation-timing-function: ease-in;  slow then fast
+    }
     
-    */
-
+    &--secondary{
+        display: block;    
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.5rem;
+    
+        animation: moveInRight 1s ease-out;
+    }
+    
 }
 
-.heading-primary--secondary{
-    display: block;    
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.5rem;
-
-    animation: moveInRight 1s ease-out;
-}
 
 @keyframes moveInLeft{
     0%{
@@ -147,61 +151,65 @@ body{
     }
 }
 
-.btn:link,
-.btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block; /*respect height and width - if we use block instead it will take full width of parent element*/
-    border-radius: 10rem;/*we can give any high number*/
-    transition: all .2s; /*transition is always defines in parent element*/  
-
-    position: relative; /*putting because of pseudo elements absolute positioning*/
-
-    font-size: 1.6rem;   
-
+.btn{
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block; /*respect height and width - if we use block instead it will take full width of parent element*/
+        border-radius: 10rem;/*we can give any high number*/
+        transition: all .2s; /*transition is always defines in parent element*/  
     
-}
+        position: relative; /*putting because of pseudo elements absolute positioning*/
+    
+        font-size: 1.6rem;       
+    }
+    
+    &:hover{
+        transform: translateY(-.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2); /*x offset = 0 y offset = 10px blur 20px*/
 
-.btn:hover{
-    transform: translateY(-.3rem);
-    box-shadow: 0 1rem 2rem rgba($color-black, .2); /*x offset = 0 y offset = 10px blur 20px*/
-}
+        &::after{
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    
+    &:active{
+        transform: translateY(1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    }
+    &--white{
+        background-color: $color-white;
+        color: $color-dark-grey;
+        padding: 1.5rem 4rem;
 
-.btn:active{
-    transform: translateY(1px);
-    box-shadow: 0 .5rem 1rem rgba($color-black, .2);
-}
-.btn--white{
-    background-color: $color-white;
-    color: $color-dark-grey;
-    padding: 1.5rem 4rem;
-}
-
-.btn::after{
-    content: ""; /*mandetory to define this*/
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-
-    transition: all .4s;
-}
-
-.btn--white::after{
-    background-color: #fff;
-}
-
-.btn:hover::after{
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-
-.btn--animated{
-    animation: moveInBottom .5s ease-out .75s;
-    animation-fill-mode: backwards; /*automatically applies the behaviour of 0% i.e @keyframes 0% opacity 0*/
+        &::after{
+            background-color: #fff;
+        }
+    }
+    
+    &::after{
+        content: ""; /*mandetory to define this*/
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    
+        transition: all .4s;
+    }
+    
+   
+    
+    
+    
+    
+    &--animated{
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards; /*automatically applies the behaviour of 0% i.e @keyframes 0% opacity 0*/
+    }
 }

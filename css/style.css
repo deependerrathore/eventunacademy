@@ -34,24 +34,21 @@ body {
   /*can use bennettfeely.com/clippy for other clip polygon*/
   position: relative;
   /*we have to give relative position to header because .logo-box is absolute position and it need a relation from where to calculate positon*/ }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  /* this 40px will calculated from .header as the postion is relative and .logo-box psition is absolute*/
-  left: 4rem; }
-
-.header__logo {
-  height: 5rem;
-  /* width will be automatically figure it out by browser*/ }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* because of the top and left 50% property the positon will be not what we wanted i.e. the text will be slighltly right and below so using this propery so that we can center the content*/
-  text-align: center; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    /* this 40px will calculated from .header as the postion is relative and .logo-box psition is absolute*/
+    left: 4rem; }
+  .header__logo {
+    height: 5rem;
+    /* width will be automatically figure it out by browser*/ }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* because of the top and left 50% property the positon will be not what we wanted i.e. the text will be slighltly right and below so using this propery so that we can center the content*/
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
@@ -59,28 +56,26 @@ body {
   backface-visibility: hidden;
   /*to remove the shaky animation - not happening on my PC - in actual text move bit upwards 1 or 2px*/
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation: moveInLeft 1s ease-out;
-  /*
-    animation-delay: 3s; this is used for delay
-    animation-iteration-count: 3;
-  
-    animation-timing-function: ease-out;  faster then flow
-    animation-timing-function: ease-in;  slow then fast
-    
-    */ }
-
-.heading-primary--secondary {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.5rem;
-  animation: moveInRight 1s ease-out; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-out;
+    /*
+        animation-delay: 3s; this is used for delay
+        animation-iteration-count: 3;
+      
+        animation-timing-function: ease-out;  faster then flow
+        animation-timing-function: ease-in;  slow then fast
+        
+        */ }
+  .heading-primary--secondary {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
+    animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
   0% {
@@ -110,8 +105,7 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
@@ -128,6 +122,9 @@ body {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   /*x offset = 0 y offset = 10px blur 20px*/ }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(1px);
@@ -137,6 +134,8 @@ body {
   background-color: #fff;
   color: #777;
   padding: 1.5rem 4rem; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
   content: "";
@@ -150,13 +149,6 @@ body {
   left: 0;
   z-index: -1;
   transition: all .4s; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
 
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
