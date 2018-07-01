@@ -1,0 +1,36 @@
+
+.header{
+    height: 95vh;
+    background-image:linear-gradient(
+        to right bottom,
+        rgba($color-primary-dark,.80),
+        rgba($color-primary-light,.80)),
+        url(../images/hero.jpeg); /*which ever we define first will come on top - so in this case first comes the gradient then image*/
+    background-size: cover; /*always try to fit in the view port*/
+    background-position: top; /*top portion will remain fix -- bottom ,center are other property that we can use generally*/
+    clip-path: polygon(0 0, 100% 0 , 100% 75vh, 0 100%); /*can use bennettfeely.com/clippy for other clip polygon*/
+    position: relative; /*we have to give relative position to header because .logo-box is absolute position and it need a relation from where to calculate positon*/
+
+    &__logo-box{
+        position: absolute;
+        top: 4rem; /* this 40px will calculated from .header as the postion is relative and .logo-box psition is absolute*/
+        left: 4rem;
+    }
+    
+    &__logo{
+        height: 5rem; /* width will be automatically figure it out by browser*/
+    }
+    
+    &__text-box{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%); /* because of the top and left 50% property the positon will be not what we wanted i.e. the text will be slighltly right and below so using this propery so that we can center the content*/
+        text-align: center;
+    }
+}
+
+
+
+
+

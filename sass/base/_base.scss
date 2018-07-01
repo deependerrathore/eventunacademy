@@ -1,0 +1,22 @@
+
+
+/*
+Normalize e.g. In H1 tag their is always margin and padding is attached to it by default
+*/
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; /*border and padding is not added to total width and total height*/
+    
+}
+html{
+    //this defines what 1rem is
+    font-size: 62.5%; /*1rm = 10px we are using rem instead of em becoz em use parent font size where as rem uses root font size*/
+    /*100% is equivalent to 16px so if we are using 10px that means 100/16 * 10*/
+}
+body{
+    box-sizing: border-box; //better practice - the height and width we define will not include padding and border 
+}
