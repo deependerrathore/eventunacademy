@@ -35,17 +35,17 @@ body {
   position: relative;
   /*we have to give relative position to header because .logo-box is absolute position and it need a relation from where to calculate positon*/ }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   /* this 40px will calculated from .header as the postion is relative and .logo-box psition is absolute*/
   left: 4rem; }
 
-.logo {
+.header__logo {
   height: 5rem;
   /* width will be automatically figure it out by browser*/ }
 
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -60,7 +60,7 @@ body {
   /*to remove the shaky animation - not happening on my PC - in actual text move bit upwards 1 or 2px*/
   margin-bottom: 6rem; }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -75,7 +75,7 @@ body {
     
     */ }
 
-.heading-primary-secondary {
+.heading-primary--secondary {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -133,7 +133,7 @@ body {
   transform: translateY(1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
   padding: 1.5rem 4rem; }
@@ -151,14 +151,14 @@ body {
   z-index: -1;
   transition: all .4s; }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff; }
 
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0; }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom .5s ease-out .75s;
   animation-fill-mode: backwards;
   /*automatically applies the behaviour of 0% i.e @keyframes 0% opacity 0*/ }
