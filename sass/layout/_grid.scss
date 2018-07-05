@@ -11,7 +11,7 @@
     @include clearfix;//whenever we will apply float margin will reduced to 0 even though we have given $gutter-vertical so we need to include with clearfix
 
     [class^="col-"]{ //^ = start with, * = contain , $  = end with
-        background-color: orange;
+        //background-color: orange;
         float: left;
         &:not(:last-child){
             margin-right: $gutter-horizontal;
