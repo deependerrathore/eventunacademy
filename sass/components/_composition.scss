@@ -5,6 +5,9 @@
         box-shadow: 0 1.4rem 4rem rgba($color-black,.4);
         border-radius: 2px;
         position: absolute;
+        z-index: 10; // we can give any value here
+        transition: .2s all;
+        outline-offset: 2rem;
 
         &--p1{
             left: 0;
@@ -20,6 +23,19 @@
             left: 20%;
             top:10rem;
         }
+
+        
+        &:hover{
+            outline: 1.5rem solid $color-primary; //this is same as using border but we can use outline-offset property to put the gap between image and border
+            transform: scale(1.05) translateY(-.5rem);
+            box-shadow: 0 1.5rem 4rem rgba($color-black,.4);
+            z-index: 20; //this value should be higher than value given above z-index so that image can come up
+        }
+    }
+
+    //composition:hover composition__photo:not(:hover)
+    &:hover &__photo:not(:hover){
+        transform: scale(.95);
     }
 
     
