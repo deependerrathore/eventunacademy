@@ -8,8 +8,8 @@
     padding: 20rem 0;
     background-image:linear-gradient(
         to right bottom,
-        rgba($color-primary-dark,.80),
-        rgba($color-primary-light,.80)),
+        rgba($color-primary-light,.80),
+        rgba($color-primary-dark,.80)),
         url(../images/nat-4.jpg); /*which ever we define first will come on top - so in this case first comes the gradient then image*/
         background-size: cover;
         margin-top: -10rem;
