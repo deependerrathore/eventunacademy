@@ -205,6 +205,10 @@ body {
       transform: rotateY(180deg); }
       .card__side--back-1 {
         background-image: linear-gradient(to right, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right, #71DDE3, #233D4D); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right, #02735E, #014034); }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
@@ -218,9 +222,9 @@ body {
     .card__picture--1 {
       background-image: linear-gradient(to right, #ffb900, #ff7730), url(../images/nat-5.jpg); }
     .card__picture--2 {
-      background-image: url(../images/nat-5.jpg); }
+      background-image: linear-gradient(to right, #71DDE3, #233D4D), url(../images/nat-6.jpg); }
     .card__picture--3 {
-      background-image: url(../images/nat-5.jpg); }
+      background-image: linear-gradient(to right, #02735E, #014034), url(../images/nat-7.jpg); }
   .card__heading {
     font-size: 2.5rem;
     font-weight: 300;
@@ -237,6 +241,10 @@ body {
     box-decoration-break: clone; }
     .card__heading-span--1 {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(113, 221, 227, 0.85), rgba(35, 61, 77, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(2, 115, 94, 0.85), rgba(1, 64, 52, 0.85)); }
   .card__details {
     padding: 3rem; }
     .card__details ul {
@@ -249,6 +257,23 @@ body {
         padding: 1rem; }
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__price-box {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 8rem; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
 
 .composition {
   position: relative; }
