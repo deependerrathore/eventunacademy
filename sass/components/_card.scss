@@ -55,20 +55,22 @@
         background-blend-mode: screen;
         -webkit-clip-path: polygon(0 0 , 100% 0 ,100% 85%, 0 100%); 
         clip-path: polygon(0 0 , 100% 0 ,100% 85%, 0 100%); 
+        border-top-left-radius: 3px;//because of the above clip path property raidus is again removed so using this to put the radius again
+        border-top-right-radius: 3px;
         
 
         &--1{
             
             background-image: linear-gradient(to right,$color-secondary-light,$color-secondary-dark),
-            url(../images/nat-5.jpg);
+            url(../images/nat5.jpg);
         }
         &--2{
             background-image: linear-gradient(to right,$color-primary-light,$color-primary-dark),
-            url(../images/nat-6.jpg);
+            url(../images/nat6.jpg);
         }
         &--3{
             background-image: linear-gradient(to right,$color-tertiary-light,$color-tertiary-dark),
-            url(../images/nat-7.jpg);
+            url(../images/nat7.jpg);
         }
     }
 

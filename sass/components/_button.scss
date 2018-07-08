@@ -34,7 +34,19 @@
         padding: 1.5rem 4rem;
 
         &::after{
-            background-color: #fff;
+            background-color: $color-white;
+        }
+    }
+
+    
+
+    &--primary{
+        background-color: $color-primary;
+        color: $color-white;
+        padding: 1.5rem 4rem;
+
+        &::after{
+            background-color: $color-primary;
         }
     }
     
