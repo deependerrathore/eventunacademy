@@ -26,7 +26,7 @@
 
         
         &:hover{
-            outline: 1.5rem solid $color-primary; //this is same as using border but we can use outline-offset property to put the gap between image and border
+            outline: 1rem solid $color-primary; //this is same as using border but we can use outline-offset property to put the gap between image and border
             transform: scale(1.05) translateY(-.5rem);
             box-shadow: 0 1.5rem 4rem rgba($color-black,.4);
             z-index: 20; //this value should be higher than value given above z-index so that image can come up
