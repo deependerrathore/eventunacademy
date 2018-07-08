@@ -241,11 +241,11 @@ body {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
     .card__picture--1 {
-      background-image: linear-gradient(to right, #FFAA2D, #FE7F2D), url(../images/nat5.jpg); }
+      background-image: linear-gradient(to right, #FFAA2D, #FE7F2D), url(../images/nat-5.jpg); }
     .card__picture--2 {
-      background-image: linear-gradient(to right, #38617A, #233D4D), url(../images/nat6.jpg); }
+      background-image: linear-gradient(to right, #38617A, #233D4D), url(../images/nat-6.jpg); }
     .card__picture--3 {
-      background-image: linear-gradient(to right, #86F0CF, #579C87), url(../images/nat7.jpg); }
+      background-image: linear-gradient(to right, #86F0CF, #579C87), url(../images/nat-7.jpg); }
   .card__heading {
     font-size: 2.5rem;
     font-weight: 300;
