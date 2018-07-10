@@ -22,15 +22,43 @@
         -webkit-clip-path: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
         transform: translateX(-3rem) skewX(12deg) ;
+        position: relative;
     }
 
     &__img{
        height: 100%; //we have already defined the width above i.e. 15rem 15rem
+       transform: translateX(-3.5rem) scale(1.4);
+       backface-visibility: hidden;
+       transition: all .5s;
     }
 
     &__text{
 
         transform: skewX(12deg);
         
+    }
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,0);
+        color: $color-white;
+        font-size: 1.7rem;
+        text-align: center;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption{
+        opacity: 1;
+        //transform: translateY(-50%); //this will not work since we are using translate above we can't use translateY here
+        transform: translate(-50%,-50%);
+    }
+
+    &:hover &__img{
+        transform: translateX(-3.5rem) scale(1);
+        filter: blur(3px) brightness(80%);
     }
 }
