@@ -14,6 +14,7 @@
         width: 90%;
         display: block;
         border-bottom: 3px solid transparent;//in focus state we are giving 3px border because of that element moves 3px on focus so to nutralize we are using this
+        transition: all .2s;
         
         &:focus{
             outline: none;//no blue color on border
@@ -49,5 +50,52 @@
         visibility: hidden;//we cannot animate the visiblity i.e. why we are using opacity -hidden still takes up space on the page.
         transform: translateY(-4rem);
 
+    }
+
+
+    &__radio-group{
+        width: 49%;
+        display: inline-block;
+    }
+
+    &__radio-input{
+       display: none; 
+    }
+    &__radio-label{
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+    }
+
+    &__radio-button{
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;//without this full cricle will not display
+        position: absolute;
+        left: 0;
+        top: -.4rem;
+    
+        &::after{
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: $color-primary;
+            opacity: 0;
+            transition: opacity .3s;
+
+        }
+    }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after{
+        opacity: 1;
     }
 }
