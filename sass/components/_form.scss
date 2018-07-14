@@ -1,0 +1,53 @@
+.form{
+    &__group:not(:last-child){
+        margin-bottom: 2rem;
+    }
+
+    &__input{
+        font-size: 1.5rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .50);
+        border:none;
+        width: 90%;
+        display: block;
+        border-bottom: 3px solid transparent;//in focus state we are giving 3px border because of that element moves 3px on focus so to nutralize we are using this
+        
+        &:focus{
+            outline: none;//no blue color on border
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-primary;
+        }
+
+        &:focus:invalid{
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+        &::-webkit-input-placeholder{
+            color:$color-dark-grey-2;
+        }
+
+
+    }
+
+    
+
+    
+
+    &__label{
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+    }
+
+    &__input:placeholder-shown + &__label{ //+ is for adjecent sibling or we can use ~ if there is some element in between like button between input and label field
+        //opacity: 0;
+        visibility: hidden;//we cannot animate the visiblity i.e. why we are using opacity -hidden still takes up space on the page.
+        transform: translateY(-4rem);
+
+    }
+}
