@@ -12,6 +12,7 @@
         top: 6rem;
         right: 6rem;
         z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba($color-black, .1);
     }
     
     &__background{
@@ -23,8 +24,9 @@
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light,$color-primary-dark);
         z-index: 1000;
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
 
-        transform: scale(80);
+        //transform: scale(80);
     }
     
     &__nav{
@@ -34,6 +36,10 @@
         top: 0;
         right: 0;
         z-index: 1500;
+
+        opacity: 0;
+        width: 0;//since if we only use opacity than also links are still clickable on homepage
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
     
     &__list{
@@ -41,6 +47,7 @@
         @include centerHorVer;
         list-style: none;
         text-align: center;
+        width: 100%;
     }
     
     &__item{
@@ -78,6 +85,15 @@
         }
         
 
+    }
+
+    &__checkbox:checked ~ &__background{
+        transform: scale(80);
+    }
+
+    &__checkbox:checked ~ &__nav{
+        opacity: 1;
+        width: 100%;
     }
 
 }
