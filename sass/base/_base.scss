@@ -16,27 +16,18 @@ html{
     //this defines what 1rem is
     font-size: 62.5%; /*1rm = 10px we are using rem instead of em becoz em use parent font size where as rem uses root font size*/
     /*100% is equivalent to 16px so if we are using 10px that means 100/16 * 10*/
-    /*
-    @media(max-width:600px){
-        font-size: 50%;
-    }    
-    */
+ 
+    
+    @include respond(tab-land){ //width < 1200
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25
+    }
 
-    /*@include respond-phone{
-        font-size: 50%;
+    @include respond(tab-port){ //width < 900p
+        font-size: 50%; //1 rem = 8px, 8/16 = 50
     }
-    */
-    @include respond(phone){
-        font-size: 50%;
-    }
-    @include respond(tab-port){
-        font-size: 60%;
-    }
-    @include respond(tab-land){
-        font-size: 70%;
-    }
+
     @include respond(big-desktop){
-        font-size: 80%;
+        font-size: 75%; //1 rem = 12px , 12/16 = 75
     }
 
 }
