@@ -1,4 +1,22 @@
 /*
+0 - 600px:      phone
+600- 900px:     Tablet protraid
+900- 1200px:    Tablet Landscape
+[1200 - 1800]: is where our normal styles apply
+1800px + :      Big Desktop
+*/
+/*@mixin respond-phone {
+    @media (max-width: 600px){ @content};
+}
+*/
+/*
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+/*
 Normalize e.g. In H1 tag their is always margin and padding is attached to it by default
 */
 *,
@@ -12,7 +30,28 @@ Normalize e.g. In H1 tag their is always margin and padding is attached to it by
 html {
   font-size: 62.5%;
   /*1rm = 10px we are using rem instead of em becoz em use parent font size where as rem uses root font size*/
-  /*100% is equivalent to 16px so if we are using 10px that means 100/16 * 10*/ }
+  /*100% is equivalent to 16px so if we are using 10px that means 100/16 * 10*/
+  /*
+    @media(max-width:600px){
+        font-size: 50%;
+    }    
+    */
+  /*@include respond-phone{
+        font-size: 50%;
+    }
+    */ }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 60%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 70%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 80%; } }
 
 body {
   box-sizing: border-box; }
