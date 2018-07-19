@@ -10,13 +10,15 @@
 
     }
 
-    @include respond(phone){
-        
-    }
+    
 
     &__logo-box{
         text-align: center; // inline element behaves like text
         margin-bottom: 8rem;
+
+        @include respond(tab-port){
+            margin-bottom: 6rem;
+        }
     }
     &__logo{
         width: 10rem;

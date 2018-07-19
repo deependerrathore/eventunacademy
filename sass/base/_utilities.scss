@@ -5,6 +5,10 @@
 .u-margin-button-big{
     margin-bottom: 8rem !important;
 
+    @include respond(tab-port){
+        margin-bottom: 5rem !important ;      
+    }
+
 }
 
 
@@ -15,6 +19,10 @@
 
 .u-margin-button-medium{
     margin-bottom: 4rem !important;
+
+    @include respond(tab-port){
+        margin-bottom: 3rem !important ;      
+    }
 
 }
 
