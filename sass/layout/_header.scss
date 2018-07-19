@@ -11,6 +11,10 @@
     clip-path: polygon(0 0, 100% 0 , 100% 75vh, 0 100%); /*can use bennettfeely.com/clippy for other clip polygon*/
     position: relative; /*we have to give relative position to header because .logo-box is absolute position and it need a relation from where to calculate positon*/
 
+    @include respond(phone){
+        
+        clip-path: polygon(0 0, 100% 0 , 100% 85vh, 0 100%); /*can use bennettfeely.com/clippy for other clip polygon*/
+    }
     &__logo-box{
         position: absolute;
         top: 4rem; /* this 40px will calculated from .header as the postion is relative and .logo-box psition is absolute*/

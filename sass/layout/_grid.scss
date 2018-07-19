@@ -1,11 +1,21 @@
 .row{
     max-width: $grid-width;
+
     //background-color: #eee;
     margin: 0 auto; 
     
     &:not(:last-child){//this will remove the bottom margin for last element
-        margin-bottom: $gutter-vertical;  
+        margin-bottom: $gutter-vertical; 
+        
+        @include respond(tab-port){
+            margin-bottom: $gutter-vertical-small; 
+        }
 
+    }
+
+    @include respond(tab-port){
+        max-width:$grid-width-small ;
+        padding: 0 3rem;
     }
 
     @include clearfix;//whenever we will apply float margin will reduced to 0 even though we have given $gutter-vertical so we need to include with clearfix
@@ -15,7 +25,15 @@
         float: left;
         &:not(:last-child){
             margin-right: $gutter-horizontal;
+            @include respond(tab-port){
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
 
+        }
+
+        @include respond(tab-port){
+            width: 100% !important;
         }
     }
     .col-1-of-2{
