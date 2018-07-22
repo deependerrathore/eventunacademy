@@ -15,7 +15,9 @@
         display: block;
         border-bottom: 3px solid transparent;//in focus state we are giving 3px border because of that element moves 3px on focus so to nutralize we are using this
         transition: all .2s;
-        
+        @include respond(tab-port){
+            width:100%;
+        }
         &:focus{
             outline: none;//no blue color on border
             box-shadow: 0 1rem 2rem rgba($color-black, .1);
@@ -56,6 +58,11 @@
     &__radio-group{
         width: 49%;
         display: inline-block;
+
+        @include respond(tab-port){
+            width: 100%;
+            margin-bottom: 2rem;
+        }
     }
 
     &__radio-input{
