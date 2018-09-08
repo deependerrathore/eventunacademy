@@ -1,0 +1,32 @@
+.loginandrego{
+    width: 65%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    //background-color: rgba($color-white,.6);
+    background-image:linear-gradient(to right bottom,$color-white,$color-light-grey-2);
+
+    border-radius: 3px;
+    padding: 6rem;
+    font-size: $default-font-size;
+    
+}
+.form__input{
+    width: 100%;
+}
+
+.static{
+    padding-bottom: 2rem;
+    &:hover{
+        transform: skewY(0deg) skewX(0deg) scale(1.0)!important;
+        text-shadow: none;
+    }
+    
+    
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+

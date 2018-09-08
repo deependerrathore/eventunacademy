@@ -1,4 +1,5 @@
 <?php
+include('design/design.html');
 include('classes/DB.php');
 if(isset($_POST['createaccount'])){
     $username= $_POST['username'];
@@ -14,10 +15,31 @@ if(isset($_POST['createaccount'])){
 ?>
 
 
-<h1>Register</h1>
-<form action='create-account.php' method='post'>
-<input type='text' name='username'  value='' placeholder='Username...'/><p>
-<input type='password' name='password' value='' placeholder='password' /><p>
-<input type='email' name='email' value='' placeholder='someonce@somesite.com' /><p>
-<input type='submit' name='createaccount' value='Create Account'/><p>
-</form>
+
+<div class='row'>
+    <div class="loginandrego">
+        
+        <h2 class="header-secondary static">
+            Registration
+        </h2>
+        <form action='create-account.php' method='post' class='form'>
+            <div class="form__group">
+                <input type='text' name='username' class="form__input" placeholder='Username'>
+                <label for="name" class="form__label">Username</label>
+            </div>
+            <div class="form__group">
+                <input type='password' name='password' class="form__input" placeholder='Password'>
+                <label for="name" class="form__label">Password</label>
+            </div>
+            <div class="form__group">
+                <input type='email' name='email' class="form__input" placeholder='Someonce@somesite.com'>
+                <label for="name" class="form__label">Email</label>
+            </div>
+            <div class="form__group">
+                <button class="btn btn--primary left">Sign Up &rarr;</button> 
+                <button class="btn btn--primary right">Login &rarr;</button> 
+            </div>
+        </form>
+    </div>
+    
+</div>
