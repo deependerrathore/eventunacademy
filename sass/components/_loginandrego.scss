@@ -1,19 +1,18 @@
 .loginandrego{
-    width: 65%;
+    width: 60%;
     margin: 0 auto;
     box-shadow: 0 3rem 6rem rgba($color-black, .1);
-    //background-color: rgba($color-white,.6);
-    background-image:linear-gradient(to right bottom,$color-white,$color-light-grey-2);
-
+    //background-color: rgba($color-white,1);
+    background-image:linear-gradient(to right bottom,rgba($color-dark-grey,.05),rgba($color-white,.1));
     border-radius: 3px;
     padding: 6rem;
     font-size: $default-font-size;
     
 }
+
 .form__input{
     width: 100%;
 }
-
 .static{
     padding-bottom: 2rem;
     &:hover{
