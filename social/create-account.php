@@ -1,6 +1,10 @@
 <?php
 include('design/design.html');
 include('classes/DB.php');
+if (isset($_POST["data"])) {
+    $data = json_decode($_POST["data"]);
+    echo $data->username;
+}
 if(isset($_POST['createaccount'])){
     $username= $_POST['username'];
     $password = $_POST['password'];
@@ -24,22 +28,27 @@ if(isset($_POST['createaccount'])){
         </h2>
         <form action='create-account.php' method='post' class='form'>
             <div class="form__group">
-                <input type='text' name='username' class="form__input" placeholder='Username'>
-                <label for="name" class="form__label">Username</label>
+                <input type='text' id='username' class="form__input" placeholder='Username'>
+                <label for="name" class="form__label">Username  </label>
             </div>
             <div class="form__group">
-                <input type='password' name='password' class="form__input" placeholder='Password'>
+                <input type='password' id='password' class="form__input" placeholder='Password'>
                 <label for="name" class="form__label">Password</label>
             </div>
             <div class="form__group">
-                <input type='email' name='email' class="form__input" placeholder='Someonce@somesite.com'>
+                <input type='email' id='email' class="form__input" placeholder='Someonce@somesite.com'>
                 <label for="name" class="form__label">Email</label>
             </div>
             <div class="form__group">
-                <button class="btn btn--primary left">Sign Up &rarr;</button> 
-                <button class="btn btn--primary right">Login &rarr;</button> 
+                <!--<input type='submit' value='Sign up' name='createaccount' class='btn btn--primary left'> --> 
+                
+                <button id='register' class="btn btn--primary left">Sign Up &rarr;</button> 
+                <button class="btn btn--primary right">Login &rarr;</button>
+                
             </div>
         </form>
     </div>
     
 </div>
+
+<script src="js/social.js"></script>
